@@ -1,0 +1,102 @@
+main h2{
+    color: darkslategrey;
+    font-weight: 500;
+    font-size: 1.6em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.titulo-pagina p {
+    color: #4f6b62;
+    margin-top: 4px;
+    font-size: 0.95em;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+}
+
+.card span {
+    font-size: 0.85em;
+    color: #5c6f69;
+}
+
+.card strong {
+    font-size: 1.9em;
+    font-weight: 600;
+    color: #1f3d36;
+}
+
+.card small {
+    font-size: 0.8em;
+    color: green;
+}
+
+.card small.cai {
+    color: #c0562f;
+}
+
+.graficos {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+}
+
+.caixa {
+    background-color: white;
+    border-radius: 18px 18px 12px 12px;
+    padding: 18px 20px 14px;
+    min-width: 0;
+}
+
+.caixa h3 {
+    font-size: 1em;
+    font-weight: 600;
+    color: #1f3d36;
+}
+
+.caixa p {
+    font-size: 0.8em;
+    color: #6b7d77;
+    margin: 2px 0 12px;
+}
+
+.area {
+    position: relative;
+    height: 250px;
+}
+
+.area.alta {
+    height: 280px;
+}
+
+.larga {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 1000px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .graficos { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+    #sidebar { display: none; }
+    .cards { grid-template-columns: 1fr; }
+    #barra-superior input { width: 180px; }
+}

@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border: none;
+}
+
+
+#conteiner-geral {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#sidebar {
+    
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: white;
+    padding: 10px 15px;
+    gap: 20px;
+}
+
+#sidebar h1 {
+    font-size: 1.2em;
+    text-align: center;
+    
+}
+
+#sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+
+}
+#sidebar li {
+color: darkslategrey;
+}
+#sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 7px 15px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+#sidebar a:hover:not(#active) {
+    color: green;
+}
+
+#sidebar a:hover svg:not(#active svg) {
+    fill: green;
+}
+
+#sidebar svg {
+    width: 20px;
+    height: 20px;
+    fill: darkslategrey;
+}
+
+#active {
+    color: white;
+    background-color: green;
+    border-radius: 20px;
+}
+#active svg {
+    fill: white;
+}
+
+
+
+
+
+
+#conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 30px 30px;
+    width: 100%;
+    background-color: rgb(207, 250, 207);
+    overflow-y: auto;
+}
+
+
+#barra-superior {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#barra-superior input {
+    width: 300px;
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+#barra-superior input:focus {
+    outline: none;
+    border-color: rgb(114, 250, 114);
+    box-shadow: 0 0 5px rgba(0, 223, 0, 0.24);
+}
+
+#bnts-superior {
+    display: flex;
+    gap: 10px;
+}
+#barra-superior button {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#barra-superior button:hover {
+    background-color: lightgreen;
+    border-color: lightgreen;
+}
+
+.profile-icon {
+    border: 2px solid white;
+    background-image: url('imagesdw.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+
