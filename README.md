@@ -2,6 +2,10 @@
 
 Dashboard interativo para mapeamento e visualização de dados sobre a educação ambiental nas escolas de Ensino Fundamental e Médio de Recife.
 
+Acesse agora em:
+
+https://ecorecife-educacional.onrender.com
+
 ## 🛠️ Stacks utilizadas
 
 - **HTML5**: estrutura das páginas;
