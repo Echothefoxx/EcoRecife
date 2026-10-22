@@ -138,10 +138,12 @@ btn_cor.forEach(function (botao) {
     
         } else if (contador == 3) {
             contador = 1;
+            this.closest('.caixa').style.backgroundColor= '#f4dcff';
+
+        } else if (contador == 3) {
+            contador = 1;
             this.closest('.caixa').style.backgroundColor= 'white';
-
-
         }
 
-    }
+        }
 });
