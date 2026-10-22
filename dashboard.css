@@ -58,17 +58,52 @@ main {
     gap: 16px;
 }
 
+/*=================== caixas e dinamica css ==========================*/
 .caixa {
     background-color: white;
     border-radius: 18px 18px 12px 12px;
     padding: 18px 20px 14px;
     min-width: 0;
+    
+
 }
 
 .caixa h3 {
     font-size: 1em;
     font-weight: 600;
     color: #1f3d36;
+}
+
+.caixa-info {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    
+}
+
+.options {
+    transform: translateX(-10px);
+    opacity: 0;
+    transition: 0.3s;
+    
+}
+
+.options button {
+    transition: 0.3s ease;
+    border-radius: 50%;
+    background-color: white;
+    padding: 3px;
+}
+
+.options button:hover {
+    background-color: gainsboro;
+}
+
+
+.caixa:hover .options {
+    opacity: 1;
+    transform: translateX(0px);
+
 }
 
 .caixa p {
