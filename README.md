@@ -6,6 +6,10 @@ Acesse agora em:
 
 https://ecorecife-educacional.onrender.com
 
+ou
+
+https://ecorecife-educacional.onrender.com/
+
 ## 🛠️ Stacks utilizadas
 
 - **HTML5**: estrutura das páginas;
