@@ -24,7 +24,7 @@ O projeto é publicado automaticamente na **Vercel** a cada push na branch princ
 - Transições suaves e `cursor: pointer` nos botões
 
 ### Demonstração
-![Demonstração](assets\img\show-demo.gif)
+![Demonstração](assets/img/show-demo.gif)
 
 ### Tecnologias
 HTML, CSS e JavaScript (`querySelectorAll`, `forEach`, `addEventListener`, `closest`).
