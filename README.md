@@ -18,7 +18,7 @@ https://ecorecife-educacional.onrender.com
 
 ## 🌐 Deploy
 
-O projeto é publicado automaticamente na **Vercel** a cada push na branch principal do GitHub.
+O projeto é publicado automaticamente na **Render** a cada push na branch principal do GitHub.
 
 ## 🎨 Atualização: interações nas caixas
 
