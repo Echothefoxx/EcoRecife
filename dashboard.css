@@ -88,15 +88,19 @@ main {
     
 }
 
+.options svg {
+    fill: rgb(185, 185, 185);
+}
+
 .options button {
     transition: 0.3s ease;
     border-radius: 50%;
-    background-color: white;
     padding: 3px;
 }
 
-.options button:hover {
-    background-color: gainsboro;
+.options button svg:hover {
+    fill: #1f3d36;
+
 }
 
 
