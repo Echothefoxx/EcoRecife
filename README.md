@@ -8,7 +8,7 @@ https://ecorecife-educacional.onrender.com
 
 ou
 
-https://ecorecife-educacional.onrender.com/
+https://ecorecife.vercel.app/
 
 ## 🛠️ Stacks utilizadas
 
