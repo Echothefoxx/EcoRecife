@@ -16,20 +16,23 @@ main {
     font-size: 0.95em;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-}
+
+
 
 .card {
     background-color: white;
     border-radius: 14px;
     padding: 16px 18px;
     display: flex;
-    flex-direction: column;
-    gap: 4px;
     
+    gap: 4px;
+    justify-content: space-between;
+    
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
 }
 
 .card span {
@@ -52,11 +55,6 @@ main {
     color: #c0562f;
 }
 
-.graficos {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 16px;
-}
 
 /*=================== caixas e dinamica css ==========================*/
 .caixa {
@@ -85,11 +83,14 @@ main {
     transform: translateX(-10px);
     opacity: 0;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
     
 }
 
+
 .options svg {
-    fill: rgb(185, 185, 185);
+    fill: rgba(0, 0, 0, 0.315);
 }
 
 .options button {
@@ -104,7 +105,8 @@ main {
 }
 
 
-.caixa:hover .options {
+.caixa:hover .options,
+.card:hover .options {
     opacity: 1;
     transform: translateX(0px);
 
