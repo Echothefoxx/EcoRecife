@@ -16,11 +16,8 @@ main {
     font-size: 0.95em;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-}
+
+
 
 .card {
     background-color: white;
@@ -58,11 +55,6 @@ main {
     color: #c0562f;
 }
 
-.graficos {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 16px;
-}
 
 /*=================== caixas e dinamica css ==========================*/
 .caixa {
@@ -91,8 +83,11 @@ main {
     transform: translateX(-10px);
     opacity: 0;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
     
 }
+
 
 .options svg {
     fill: rgba(0, 0, 0, 0.315);
