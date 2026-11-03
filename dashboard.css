@@ -89,7 +89,7 @@ main {
 }
 
 .options svg {
-    fill: rgb(185, 185, 185);
+    fill: rgba(0, 0, 0, 0.315);
 }
 
 .options button {
