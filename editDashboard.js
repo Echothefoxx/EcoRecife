@@ -42,18 +42,18 @@ btn_cor.forEach(function (botao) {
     function mudarCor(){
         if (contador == 1) {
             contador = 2;
-            this.closest('.caixa').style.backgroundColor= '#dcfeff';
+            this.closest('.caixa, .card').style.backgroundColor= '#dcfeff';
         } else if (contador == 2) {
             contador = 3;
-            this.closest('.caixa').style.backgroundColor= '#dcffe1';
+            this.closest('.caixa, .card').style.backgroundColor= '#dcffe1';
     
         } else if (contador == 3) {
             contador = 4;
-            this.closest('.caixa').style.backgroundColor= '#f4dcff';
+            this.closest('.caixa, .card').style.backgroundColor= '#f4dcff';
 
         } else if (contador == 4) {
             contador = 1;
-            this.closest('.caixa').style.backgroundColor= 'white';
+            this.closest('.caixa, .card').style.backgroundColor= 'white';
         }
 
         }
