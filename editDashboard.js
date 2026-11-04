@@ -58,3 +58,12 @@ btn_cor.forEach(function (botao) {
 
         }
 });
+
+
+
+
+        GridStack.init({
+            cellHeight: 100,
+            margin: 8,
+            columnOpts: { breakpoints: [{ w: 700, c: 1 }, { w: 1000, c: 2 }] }
+        });
