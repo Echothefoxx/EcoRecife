@@ -58,6 +58,8 @@ main {
 
 /*=================== caixas e dinamica css ==========================*/
 .caixa {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     border-radius: 18px 18px 12px 12px;
     padding: 18px 20px 14px;
@@ -83,9 +85,13 @@ main {
     transform: translateX(-10px);
     opacity: 0;
     transition: 0.3s;
-    display: flex;
+    display: none;
     align-items: center;
     
+}
+
+.editando .options {
+    display: flex;
 }
 
 
@@ -119,13 +125,11 @@ main {
 }
 
 .area {
+    flex:1;
     position: relative;
     height: 250px;
 }
 
-.area.alta {
-    height: 280px;
-}
 
 .larga {
     grid-column: 1 / -1;
