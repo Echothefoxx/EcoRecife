@@ -46,7 +46,7 @@
                 <div id="bnts-superior">
                     <button id="edit-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20px" width="20px" fill="#1f1f1f"><path d="M5,21q-0.83,0-1.41-0.59T3,19V5Q3,4.17 3.59,3.59T5,3h8.93l-2,2H5V19H19V12.05l2-2V19q0,0.82-0.59,1.41T19,21H5Zm7-9ZM9,15V10.75l9.18-9.18q0.3-0.3 0.68-0.45q0.38-0.15 0.75-0.15q0.4,0 0.76,0.15q0.36,0.15 0.66,0.45L22.43,3q0.28,0.3 0.43,0.66T23,4.4T22.86,5.14T22.43,5.8L13.25,15H9ZM21.03,4.4L19.63,3l1.4,1.4ZM11,13h1.4l5.8-5.8L17.5,6.5L16.78,5.8L11,11.58V13Zm6.5-6.5L16.78,5.8L17.5,6.5l0.7,0.7L17.5,6.5Z"/></svg></button>
                     <button id="restart-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#1f1f1f"><path d="M12,20q-3.35,0-5.68-2.32T4,12T6.33,6.32T12,4q1.73,0 3.3,0.71Q16.88,5.43 18,6.75V4h2v7H13V9h4.2q-0.8-1.4-2.19-2.2T12,6Q9.5,6 7.75,7.75T6,12t1.75,4.25T12,18q1.93,0 3.48-1.1T17.65,14h2.1q-0.7,2.65-2.85,4.32T12,20Z"/></svg></button>
-                    <button class="profile-icon"></button>
+                    <button id="abrir"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#1f1f1f"><path d="M11,13H5V11h6V5h2v6h6v2H13v6H11V13Z"/></svg></button>
                 </div>
 
                 
@@ -54,6 +54,37 @@
 
 
             <main>
+
+
+
+
+
+<dialog id="popup">
+    <h3>Selecione o gráfico que deseja adicionar</h3>
+
+    <label><input type="radio" name="tipo" value="grafico-mensal" checked> Alunos por mês (linhas)</label>
+    <label><input type="radio" name="tipo" value="grafico-residuos"> Resíduos por tipo (rosca)</label>
+    <label><input type="radio" name="tipo" value="grafico-rpa"> Ações por RPA (barras)</label>
+    <label><input type="radio" name="tipo" value="grafico-temas"> Temas mais trabalhados (barras horizontais)</label>
+    <label><input type="radio" name="tipo" value="grafico-nivel"> Participação por nível de ensino (barras empilhadas)</label>
+
+    <button id="confirmar">Confirmar</button>
+    <button id="cancelar">Cancelar</button>
+</dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="titulo-pagina">
                     <h2>Educação ambiental em Recife</h2>
                     <p>Acompanhamento das ações nas escolas e nos bairros da cidade</p>
@@ -73,6 +104,7 @@
 
 <script src="renderers.js"></script>
 <script src="main.js"></script>
+<script src="popup.js"></script>
 <script>
     let buttonDelete = document.querySelectorAll('.btn-delete');
     buttonDelete.forEach(botao => {
