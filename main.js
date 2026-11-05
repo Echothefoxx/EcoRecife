@@ -10,12 +10,27 @@ let caixaOptions = [];
 let editBntActived = false;
 editBnt.addEventListener("click", podeEditar);
 
-fetch('dashboard-padrao.json')
-    .then(resposta => resposta.json())
-    .then(dados => {
-        grid.load(dados);
-        iniciarBotoes();
-    });
+let restartBnt = document.getElementById('restart-btn');
+restartBnt.addEventListener("click", restartDashboard);
+
+carregarDashboard();
+
+function carregarDashboard() {
+    fetch('dashboard-padrao.json')
+        .then(resposta => resposta.json())
+        .then(dados => {
+            document.querySelectorAll('canvas').forEach(canvas => Chart.getChart(canvas)?.destroy());
+            grid.removeAll();
+            grid.load(dados);
+            iniciarBotoes();
+        });
+}
+
+function restartDashboard() {
+    editBntActived = false;
+    editBnt.style.backgroundColor='#ffff';
+    carregarDashboard();
+}
 
 function iniciarBotoes() {
     caixaOptions = document.querySelectorAll('.options');
