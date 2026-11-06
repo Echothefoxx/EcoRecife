@@ -1,6 +1,3 @@
-// Troque pelos dados reais usados no gráfico "Ações por RPA"
-const acoesRealizadas = { "RPA 1": 12, "RPA 2": 8, "RPA 3": 15, "RPA 4": 6, "RPA 5": 10, "RPA 6": 9 };
-
 const tbody = document.getElementById("metas-tbody");
 const campoId = document.getElementById("meta-id");
 const campoRpa = document.getElementById("meta-rpa");
@@ -10,6 +7,42 @@ const btnSalvar = document.getElementById("meta-salvar");
 const btnCancelar = document.getElementById("meta-cancelar");
 
 let metasCache = [];
+
+function numeroDaRpa(texto) {
+  return String(texto).match(/\d+/)?.[0];
+}
+
+function graficoDeRpa() {
+  return graficosRegistrados.find(
+    (g) => g.tipo === "bar" && /rpa/i.test(g.titulo) && g.chart.canvas?.isConnected
+  )?.chart;
+}
+
+function realizadoDaRpa(rpa) {
+  const chart = graficoDeRpa();
+  if (!chart) return 0;
+  const serie = chart.data.datasets.find((d) => d.label !== "Meta");
+  const i = chart.data.labels.findIndex((l) => numeroDaRpa(l) === numeroDaRpa(rpa));
+  return i >= 0 ? serie.data[i] ?? 0 : 0;
+}
+
+function atualizarGraficoComMetas() {
+  const chart = graficoDeRpa();
+  if (!chart) return;
+  chart.data.datasets = chart.data.datasets.filter((d) => d.label !== "Meta");
+  chart.data.datasets.push({
+    label: "Meta",
+    data: chart.data.labels.map((l) => {
+      const m = metasCache.find((x) => numeroDaRpa(x.rpa) === numeroDaRpa(l));
+      return m ? m.valorMeta : null;
+    }),
+    backgroundColor: "#f9a825",
+    borderColor: "#fff",
+    borderRadius: 6,
+  });
+  chart.options.plugins.legend.display = true;
+  chart.update();
+}
 
 async function carregarMetas() {
   try {
@@ -23,7 +56,7 @@ async function carregarMetas() {
 function renderizarMetas() {
   tbody.innerHTML = "";
   metasCache.forEach((m) => {
-    const feito = acoesRealizadas[m.rpa] ?? 0;
+    const feito = realizadoDaRpa(m.rpa);
     const pct = m.valorMeta > 0 ? Math.min(100, Math.round((feito / m.valorMeta) * 100)) : 0;
     const tr = document.createElement("tr");
     tr.innerHTML = `
@@ -39,6 +72,7 @@ function renderizarMetas() {
     tr.children[4].textContent = m.anotacao || "";
     tbody.appendChild(tr);
   });
+  atualizarGraficoComMetas();
 }
 
 function limparFormulario() {

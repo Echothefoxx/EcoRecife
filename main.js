@@ -20,9 +20,11 @@ function carregarDashboard() {
         .then(resposta => resposta.json())
         .then(dados => {
             document.querySelectorAll('canvas').forEach(canvas => Chart.getChart(canvas)?.destroy());
+            graficosRegistrados.length = 0;
             grid.removeAll();
             grid.load(dados);
             iniciarBotoes();
+            if (typeof renderizarMetas === 'function') renderizarMetas();
         });
 }
 

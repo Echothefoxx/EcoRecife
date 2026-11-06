@@ -4,6 +4,7 @@ Chart.defaults.color = '#4f6b62';
 Chart.defaults.maintainAspectRatio = false;
 Chart.defaults.plugins.legend.labels.usePointStyle = true;
 Chart.defaults.plugins.legend.labels.boxWidth = 8;
+const graficosRegistrados = [];
 
 
 const BOTOES = `
@@ -55,7 +56,7 @@ function renderGrafico(contentEl, widget, tipo) {
         : horizontal ? { x: eixoValor, y: eixoCategoria }
         : { x: eixoCategoria, y: eixoValor };
 
-    new Chart(contentEl.querySelector('canvas'), {
+        const chart = new Chart(contentEl.querySelector('canvas'), {
         type: tipo,
         data: { labels: dataSource.labels, datasets },
         options: {
@@ -66,6 +67,8 @@ function renderGrafico(contentEl, widget, tipo) {
             plugins: { legend: { display: showLegend, position: tipo === 'doughnut' ? 'bottom' : 'top' } }
         }
     });
+    
+    graficosRegistrados.push({ titulo: title, tipo, chart });
 }
 
 
