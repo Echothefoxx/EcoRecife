@@ -13,6 +13,34 @@ editBnt.addEventListener("click", podeEditar);
 let restartBnt = document.getElementById('restart-btn');
 restartBnt.addEventListener("click", restartDashboard);
 
+let inputPesquisa = document.getElementById('pesquisa');
+
+inputPesquisa.addEventListener('input', function () {
+    let valor = inputPesquisa.value.toLowerCase();
+    let cards = document.querySelectorAll('.grid-stack-item');
+
+    cards.forEach(function (card) {
+        if (card.textContent.toLowerCase().includes(valor)) {
+            card.style.opacity = '1';
+            card.style.filter = 'none';
+        } else {
+            card.style.opacity = '0.4';
+            card.style.filter = 'brightness(40%)';
+        }
+    });
+
+    let linhas = document.querySelectorAll('#metas-tbody tr');
+    linhas.forEach(function (linha) {
+        if (linha.textContent.toLowerCase().includes(valor)) {
+            linha.style.opacity = '1';
+            linha.style.filter = 'none';
+        } else {
+            linha.style.opacity = '0.4';
+            linha.style.filter = 'brightness(40%)';
+        }
+    });
+});
+
 carregarDashboard();
 
 function carregarDashboard() {
@@ -31,6 +59,7 @@ function carregarDashboard() {
 function restartDashboard() {
     editBntActived = false;
     editBnt.style.backgroundColor='#ffff';
+    inputPesquisa.value = '';
     carregarDashboard();
 }
 
