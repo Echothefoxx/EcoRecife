@@ -93,6 +93,40 @@
                 <section class="cards grid-stack">
                 
                 </section>
+
+                <section id="metas">
+  <h3>Metas de ações por RPA</h3>
+
+  <div id="form-meta">
+    <input type="hidden" id="meta-id">
+    <select id="meta-rpa">
+      <option>RPA 1</option>
+      <option>RPA 2</option>
+      <option>RPA 3</option>
+      <option>RPA 4</option>
+      <option>RPA 5</option>
+      <option>RPA 6</option>
+    </select>
+    <input type="number" id="meta-valor" placeholder="Meta (nº de ações)" min="0">
+    <input type="text" id="meta-anotacao" placeholder="Anotação sobre o indicador">
+    <button id="meta-salvar">Salvar</button>
+    <button id="meta-cancelar" hidden>Cancelar edição</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>RPA</th>
+        <th>Meta</th>
+        <th>Realizado</th>
+        <th>Progresso</th>
+        <th>Anotação</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="metas-tbody"></tbody>
+  </table>
+</section>
             </main>  
 
         </div>
@@ -105,6 +139,8 @@
 <script src="renderers.js"></script>
 <script src="main.js"></script>
 <script src="popup.js"></script>
+<script src="api.js"></script>
+<script src="metas.js"></script>
 <script>
     let buttonDelete = document.querySelectorAll('.btn-delete');
     buttonDelete.forEach(botao => {
