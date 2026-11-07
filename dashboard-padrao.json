@@ -1,159 +1,121 @@
 [
   {
-    "id": "card-escolas",
+    "id": "card-com-ea",
     "type": "stat-card",
     "x": 0, "y": 0, "w": 3, "h": 1,
     "config": {
-      "title": "Escolas participantes",
-      "dataSource": { "kind": "static", "value": 186 }
+      "title": "Escolas com educação ambiental",
+      "dataSource": { "kind": "static", "value": 119106 }
     }
   },
   {
-    "id": "card-alunos",
+    "id": "card-sem-ea",
     "type": "stat-card",
     "x": 3, "y": 0, "w": 3, "h": 1,
     "config": {
-      "title": "Alunos alcançados",
-      "dataSource": { "kind": "static", "value": 24350 }
+      "title": "Escolas sem educação ambiental",
+      "dataSource": { "kind": "static", "value": 61959 }
     }
   },
   {
-    "id": "card-residuos",
+    "id": "card-sem-ea-pct",
     "type": "stat-card",
     "x": 6, "y": 0, "w": 3, "h": 1,
     "config": {
-      "title": "Resíduos recolhidos (t)",
-      "dataSource": { "kind": "static", "value": 97.4 }
+      "title": "Escolas sem educação ambiental (%)",
+      "dataSource": { "kind": "static", "value": 34.2 }
     }
   },
   {
-    "id": "card-mudas",
+    "id": "card-area-verde",
     "type": "stat-card",
     "x": 9, "y": 0, "w": 3, "h": 1,
     "config": {
-      "title": "Mudas plantadas",
-      "dataSource": { "kind": "static", "value": 3820 }
+      "title": "Escolas com área verde (%)",
+      "dataSource": { "kind": "static", "value": 35 }
     }
   },
   {
-    "id": "grafico-mensal",
-    "type": "line-chart",
+    "id": "grafico-infra",
+    "type": "bar-chart",
     "x": 0, "y": 1, "w": 8, "h": 4,
     "config": {
-      "title": "Alunos em ações ambientais por mês",
-      "subtitle": "Comparando 2025 e 2026",
+      "title": "Infraestrutura e sustentabilidade nas escolas",
+      "subtitle": "% das escolas do Brasil · Censo Escolar 2024 (INEP)",
       "dataSource": {
         "kind": "static",
-        "labels": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        "labels": ["Esgoto por fossa", "Área verde ou gramado", "Energia renovável"],
         "series": [
-          { "label": "2026", "data": [820, 960, 1480, 1710, 1890, 1650, 900, 1720, 2210, 2380, null, null] },
-          { "label": "2025", "data": [700, 810, 1250, 1400, 1520, 1380, 780, 1430, 1790, 1960, 1840, 1100] }
-        ]
-      },
-      "options": {
-        "seriesStyle": [
-          { "color": "#2e9e4f", "fill": true, "pointRadius": 3 },
-          { "color": "#3d7ea6", "dashed": true, "pointRadius": 2 }
-        ]
-      }
-    }
-  },
-  {
-    "id": "grafico-residuos",
-    "type": "doughnut-chart",
-    "x": 8, "y": 1, "w": 4, "h": 4,
-    "config": {
-      "title": "Resíduos por tipo",
-      "subtitle": "Total recolhido nas escolas",
-      "dataSource": {
-        "kind": "static",
-        "labels": ["Plástico", "Papel", "Vidro", "Metal", "Orgânico"],
-        "series": [
-          { "label": "Resíduos", "data": [34, 27, 12, 9, 18] }
-        ]
-      },
-      "options": {
-        "cutout": "62%",
-        "seriesStyle": [
-          { "color": ["#3d7ea6", "#e9a23b", "#2a9d8f", "#8a96a3", "#a9714b"] }
-        ]
-      }
-    }
-  },
-  {
-    "id": "grafico-rpa",
-    "type": "bar-chart",
-    "x": 0, "y": 5, "w": 8, "h": 4,
-    "config": {
-      "title": "Ações por RPA",
-      "subtitle": "Oficinas, mutirões e palestras",
-      "dataSource": {
-        "kind": "static",
-        "labels": ["RPA 1", "RPA 2", "RPA 3", "RPA 4", "RPA 5", "RPA 6"],
-        "series": [
-          { "label": "Ações", "data": [38, 52, 71, 46, 59, 83] }
-        ]
-      },
-      "options": {
-        "showLegend": false,
-        "borderRadius": 6,
-        "seriesStyle": [
-          { "color": ["#9bd8a8", "#9bd8a8", "#9bd8a8", "#9bd8a8", "#9bd8a8", "#2e9e4f"] }
-        ]
-      }
-    }
-  },
-  {
-    "id": "grafico-temas",
-    "type": "bar-chart",
-    "x": 8, "y": 5, "w": 4, "h": 4,
-    "config": {
-      "title": "Temas mais trabalhados",
-      "subtitle": "% das escolas que abordaram o tema",
-      "dataSource": {
-        "kind": "static",
-        "labels": ["Coleta seletiva", "Água e rios", "Manguezal", "Arborização", "Compostagem", "Mudanças climáticas"],
-        "series": [
-          { "label": "% das escolas", "data": [78, 64, 51, 47, 33, 29] }
+          { "label": "% das escolas", "data": [40.9, 35, 3.2] }
         ]
       },
       "options": {
         "horizontal": true,
         "showLegend": false,
         "maxValue": 100,
-        "borderRadius": 4,
+        "borderRadius": 6,
         "seriesStyle": [
-          { "color": "#2a9d8f" }
+          { "color": ["#a9714b", "#2e9e4f", "#e9a23b"] }
         ]
       }
     }
   },
   {
-    "id": "grafico-nivel",
-    "type": "bar-chart",
-    "x": 0, "y": 9, "w": 12, "h": 4,
+    "id": "grafico-ea-escolas",
+    "type": "doughnut-chart",
+    "x": 8, "y": 1, "w": 4, "h": 4,
     "config": {
-      "title": "Participação por nível de ensino",
-      "subtitle": "Alunos por trimestre",
+      "title": "Escolas com e sem educação ambiental",
+      "subtitle": "Brasil · Censo Escolar 2024 (INEP)",
       "dataSource": {
         "kind": "static",
-        "labels": ["1º tri", "2º tri", "3º tri", "4º tri"],
+        "labels": ["Com ações", "Sem ações"],
         "series": [
-          { "label": "Infantil", "data": [820, 1100, 1350, 1210] },
-          { "label": "Fundamental I", "data": [2100, 2650, 3020, 2780] },
-          { "label": "Fundamental II", "data": [1750, 2200, 2480, 2310] },
-          { "label": "Médio", "data": [900, 1240, 1510, 1380] }
+          { "label": "Escolas", "data": [119106, 61959] }
         ]
       },
       "options": {
-        "stacked": true,
+        "cutout": "62%",
         "seriesStyle": [
-          { "color": "#e9a23b" },
-          { "color": "#2e9e4f" },
-          { "color": "#2a9d8f" },
-          { "color": "#3d7ea6" }
+          { "color": ["#2e9e4f", "#8a96a3"] }
         ]
       }
+    }
+  },
+  {
+    "id": "grafico-matriculas",
+    "type": "bar-chart",
+    "x": 0, "y": 5, "w": 12, "h": 4,
+    "config": {
+      "title": "Matrículas por etapa e modalidade",
+      "subtitle": "Brasil · Censo Escolar 2024 (INEP). Um aluno pode aparecer em mais de uma categoria",
+      "dataSource": {
+        "kind": "static",
+        "labels": ["Educação infantil", "Ensino fundamental", "Ensino médio", "Educação profissional", "EJA", "Educação especial"],
+        "series": [
+          { "label": "Matrículas", "data": [9491894, 26002356, 7790396, 2576293, 2391319, 2076825] }
+        ]
+      },
+      "options": {
+        "showLegend": false,
+        "borderRadius": 6,
+        "seriesStyle": [
+          { "color": ["#e9a23b", "#2e9e4f", "#3d7ea6", "#2a9d8f", "#8a96a3", "#a9714b"] }
+        ]
+      }
+    }
+  },
+    {
+    "id": "grafico-qualidade-ar",
+    "type": "air-quality-chart",
+    "x": 0, "y": 9, "w": 12, "h": 4,
+    "config": {
+      "title": "Qualidade do ar no Recife (PM2.5)",
+      "subtitle": "Ontem e hoje, por hora · Open-Meteo / CAMS (modelo, não sensor local)",
+      "latitude": -8.05,
+      "longitude": -34.88,
+      "timezone": "America/Recife",
+      "color": "#3d7ea6"
     }
   }
 ]

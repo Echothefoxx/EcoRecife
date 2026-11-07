@@ -72,11 +72,49 @@ function renderGrafico(contentEl, widget, tipo) {
 }
 
 
+async function renderQualidadeAr(contentEl, widget) {
+    const { title, subtitle = '', latitude, longitude, timezone = 'America/Recife', color = '#3d7ea6' } = widget.config;
+
+    contentEl.classList.add('caixa');
+    contentEl.innerHTML = `<div class="caixa-info"><div><h3></h3><p>Carregando dados...</p></div>${BOTOES}</div>`;
+    contentEl.querySelector('h3').textContent = title;
+
+    try {
+        const url = 'https://air-quality-api.open-meteo.com/v1/air-quality'
+            + `?latitude=${latitude}&longitude=${longitude}`
+            + '&hourly=pm2_5&past_days=1&forecast_days=1'
+            + `&timezone=${encodeURIComponent(timezone)}`;
+        const resp = await fetch(url);
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const d = await resp.json();
+
+        renderGrafico(contentEl, {
+            ...widget,
+            config: {
+                title,
+                subtitle,
+                dataSource: {
+                    labels: d.hourly.time.map(t => `${t.slice(8, 10)}/${t.slice(5, 7)} ${t.slice(11, 16)}`),
+                    series: [{ label: 'PM2.5 (µg/m³)', data: d.hourly.pm2_5 }]
+                },
+                options: { showLegend: false, seriesStyle: [{ color, fill: true, pointRadius: 0 }] }
+            }
+        }, 'line');
+    } catch (erro) {
+        console.error('Erro ao carregar qualidade do ar:', erro);
+        contentEl.querySelector('p').textContent = 'Não foi possível carregar os dados da API.';
+    }
+}
+
+
+
+
 const widgetRenderers = {
     'stat-card': renderStatCard,
     'line-chart': (contentEl, widget) => renderGrafico(contentEl, widget, 'line'),
     'doughnut-chart': (contentEl, widget) => renderGrafico(contentEl, widget, 'doughnut'),
-    'bar-chart': (contentEl, widget) => renderGrafico(contentEl, widget, 'bar')
+    'bar-chart': (contentEl, widget) => renderGrafico(contentEl, widget, 'bar'),
+    'air-quality-chart': renderQualidadeAr
 };
 
 
